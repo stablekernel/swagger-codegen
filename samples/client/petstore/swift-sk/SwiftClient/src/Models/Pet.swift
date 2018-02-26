@@ -8,13 +8,12 @@
 import Foundation
 
 
-public struct Pet: Codable {
-
-            public enum Status: String, Codable { 
-        case available = "available"
-        case pending = "pending"
-        case sold = "sold"
-    }
+public class Pet: Codable {
+        public enum Status: String, Codable { 
+            case available = "available"
+            case pending = "pending"
+            case sold = "sold"
+        }
         public var _id: Int64?
         public var category: Category?
         public var name: String
@@ -33,7 +32,6 @@ public struct Pet: Codable {
             case tags
             case status
         }
-
 
 }
 

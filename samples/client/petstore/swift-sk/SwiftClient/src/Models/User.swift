@@ -8,8 +8,7 @@
 import Foundation
 
 
-public struct User: Codable {
-
+public class User: Codable {
         public var _id: Int64?
         public var username: String?
         public var firstName: String?
@@ -32,7 +31,6 @@ public struct User: Codable {
             case phone
             case userStatus
         }
-
 
 }
 

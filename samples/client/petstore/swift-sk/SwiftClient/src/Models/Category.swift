@@ -8,8 +8,7 @@
 import Foundation
 
 
-public struct Category: Codable {
-
+public class Category: Codable {
         public var _id: Int64?
         public var name: String?
 
@@ -19,7 +18,6 @@ public struct Category: Codable {
                 = "id"
             case name
         }
-
 
 }
 

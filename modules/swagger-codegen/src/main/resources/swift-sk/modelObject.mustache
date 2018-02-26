@@ -1,8 +1,7 @@
-public struct {{classname}}: Codable {
-
+public class {{classname}}: Codable {
 {{#allVars}}
     {{#isEnum}}
-        {{> modelInlineEnumDeclaration}}
+        {{>modelInlineEnumDeclaration}}
     {{/isEnum}}
 {{/allVars}}
 {{#allVars}}
@@ -65,7 +64,6 @@ public struct {{classname}}: Codable {
         additionalProperties = try container.decodeMap({{{additionalPropertiesType}}}.self, excludedKeys:
         nonAdditionalPropertyKeys)
         }
-
 {{/additionalPropertiesType}}
 {{^additionalPropertiesType}}{{#vendorExtensions.x-codegen-has-escaped-property-names}}
         public enum CodingKeys: String, CodingKey { {{#allVars}}
@@ -73,5 +71,4 @@ public struct {{classname}}: Codable {
                 = "{{{baseName}}}"{{/vendorExtensions.x-codegen-escaped-property-name}}{{/allVars}}
         }
 {{/vendorExtensions.x-codegen-has-escaped-property-names}}{{/additionalPropertiesType}}
-
 }
